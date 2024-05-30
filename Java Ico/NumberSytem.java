@@ -32,23 +32,25 @@ public class NumberSytem{
 
         Scanner input = new Scanner(System.in) ;
 
-
+        System.out.println("Please enter your number here : ");
         int Choose = input.nextInt();
+        
     return Choose;
     }
 
     public static void CalculateNumber(int Choose_){
 int integer = 0; 
 double point = 0;
+double ansInt = 0;
+double ansPoint = 0;
+double ans = 0;
+int i = 0 ;
+int j = -1 ;
         System.out.println("Enter your Number :");
         Scanner input = new Scanner(System.in);
         double num = input.nextDouble();
-
-
-        integer = (int) num ;
-        point = num - integer;
-
         
+
 
         switch(Choose_){
 
@@ -57,7 +59,23 @@ double point = 0;
 
         case 2:
             
+        integer = (int) num ;
+        point = num - integer;
+        
+        
+        if(integer > 0 ){
+        ansInt = integer % 10;
+        ans = ans + ansInt * Math.pow(2, i);
+        i++;
+            }
 
+        if(point > 0){
+        ansPoint = point % 10;
+        ans += ansPoint * (1/Math.pow(2,j));
+            j--;
+        }
+        
+        System.out.println("Your answer is " + ans);
 
 
             break;
